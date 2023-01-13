@@ -5,18 +5,19 @@
 replicaCount: 1
 
 image:
-  repository: itatm/ad2image
+  repository: dockerhub.muenchen.de/itatm/ad2image
+  #repository: itatm/ad2image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  # tag: ""
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+# nameOverride: ""
+# fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -84,3 +85,45 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+ad:
+  # Connection URL for AD server, for example 'ldaps://ad.mydomain.com:636'.
+  url: ""
+  # User Search Base for user lookup, for example 'OU=Users,DC=mycompany,DC=com'.
+  userSearchBase: ""
+  # User Search filter, {uid} will be replaced with the requested user uid.
+  userSearchFilter: "(&(objectClass=organizationalPerson)(cn={uid}))"
+ews:
+  # EWS service URL, e.g. https://computer.domain.contoso.com/EWS/Exchange.asmx
+  ewsServiceUrl: ""
+  # Exchange/EWS domain, e.g. 'domain.contoso.com'
+  domain: ""
+credentials:
+  # Bind User-DN for AD authentication
+  adUserDn: ""
+  # Password for AD authentication
+  adPassword: ""
+  # Username for EWS NTLM authentication.
+  ewsUsername: ""
+  # Password for EWS NTLM authentication.
+  ewsPassword: ""
+  existingSecret: ""
+
+# URL, will be used as redirect url for /
+docsUrl: ""
+
+extraEnvVars:
+#  - name: "TZ"
+#    value: "Europe/Berlin"
+
+extraVolumeMounts:
+  []
+  # - name: secret-truststore
+  #   readOnly: true
+  #   mountPath: /mnt
+extraVolumes:
+  []
+  # - name: secret-truststore
+  #   secret:
+  #     secretName: custom-cacerts
+  #     defaultMode: 420
