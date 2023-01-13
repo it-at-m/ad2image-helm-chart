@@ -1,3 +1,8 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
 # ad2image-helm-chart
 
 ## Introduction
@@ -68,3 +73,17 @@ The command deploys ad2image on the Kubernetes cluster with some default configu
 | route.tls.certificate                   | string | `""`                                                  | Route tls certificate                                                                                                                  |
 | route.tls.caCertificate                 | string | `""`                                                  | Route tls ca certificate                                                                                                               |
 | route.tls.destinationCACertificate      | string | `""`                                                  | Route tls destination ca certificate                                                                                                   |
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/it-at-m/ad2image-helm-chart.svg?style=for-the-badge
+[contributors-url]: https://github.com/it-at-m/ad2image-helm-chart/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/it-at-m/ad2image-helm-chart.svg?style=for-the-badge
+[forks-url]: https://github.com/it-at-m/ad2image-helm-chart/network/members
+[stars-shield]: https://img.shields.io/github/stars/it-at-m/ad2image-helm-chart.svg?style=for-the-badge
+[stars-url]: https://github.com/it-at-m/ad2image-helm-chart/stargazers
+[issues-shield]: https://img.shields.io/github/issues/it-at-m/ad2image-helm-chart.svg?style=for-the-badge
+[issues-url]: https://github.com/it-at-m/ad2image-helm-chart/issues
+[license-shield]: https://img.shields.io/github/license/it-at-m/ad2image-helm-chart.svg?style=for-the-badge
+[license-url]: https://github.com/it-at-m/ad2image-helm-chart/blob/main/LICENSE
