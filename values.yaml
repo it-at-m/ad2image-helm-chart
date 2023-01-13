@@ -60,6 +60,24 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+service:
+  type: ClusterIP
+  port: 8080
+
+route:
+  enabled: false
+  annotations: {}
+  host: ""
+  path: ""
+  wildcardPolicy: "None"
+  tls:
+    termination: "Edge"
+    insecureEdgeTerminationPolicy: "Redirect"
+    key: ""
+    certificate: ""
+    caCertificate: ""
+    destinationCACertificate: ""
+
 resources:
   {}
   # We usually recommend not to specify default resources and to leave this as a conscious
