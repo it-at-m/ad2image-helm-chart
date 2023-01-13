@@ -1,7 +1,5 @@
 # ad2image-helm-chart
 
-:construction: This is a work-in-progress :construction:
-
 ## Introduction
 
 This chart bootstraps a [ad2image](https://github.com/it-at-m/ad2image) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
@@ -22,7 +20,7 @@ Install this chart using:
 helm install ad2image ad2image/ad2image --values values.yaml
 ```
 
-The command deploys ad2image on the Kubernetes cluster in the a configuration. The [values](#values) section lists the parameters that can or **must** be configured during installation.
+The command deploys ad2image on the Kubernetes cluster with some default configuration. The [values](#values) section lists the parameters that can or **must** be configured during installation.
 
 ## Values
 
