@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: dockerhub.muenchen.de/itatm/ad2image
+  repository: itatm/ad2image
   #repository: itatm/ad2image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.

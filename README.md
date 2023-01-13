@@ -19,7 +19,7 @@ helm repo add ad2image https://it-at-m.github.io/ad2image-helm-chart
 Install this chart using:
 
 ```bash
-helm install ad2image ad2image --values values.yaml
+helm install ad2image ad2image/ad2image --values values.yaml
 ```
 
 The command deploys ad2image on the Kubernetes cluster in the a configuration. The [values](#values) section lists the parameters that can or **must** be configured during installation.
