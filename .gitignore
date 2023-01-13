@@ -5,6 +5,9 @@
 # Chart dependencies
 **/charts/*.tgz
 
+## local values file
+values-local.yaml
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

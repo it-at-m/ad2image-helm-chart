@@ -27,24 +27,62 @@ spec:
       serviceAccountName: {{ include "ad2image-helm-chart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "ad2image-helm-chart.fullname" . }}
+            defaultMode: 420
+      {{- with .Values.extraVolumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: LC_ALL
+              value: C.utf8
+          {{- with .Values.extraEnvVars }}
+            {{- toYaml . | nindent 12 }}
+          {{- end}}
+          envFrom:
+            - prefix: DE_MUENCHEN_OSS_AD2IMAGE_
+              secretRef:
+                {{- if .Values.credentials.existingSecret }}
+                name: {{ .Values.credentials.existingSecret }}
+                {{- else }}
+                name: {{ include "ad2image-helm-chart.fullname" . }}
+                {{- end }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /home/jboss/config
+          {{- with .Values.extraVolumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           livenessProbe:
             httpGet:
-              path: /
+              path: /actuator/health/liveness
               port: http
+            initialDelaySeconds: 60
+            timeoutSeconds: 15
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
           readinessProbe:
             httpGet:
-              path: /
+              path: /actuator/health/readiness
               port: http
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 20
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
