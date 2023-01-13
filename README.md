@@ -11,7 +11,7 @@ This documentation is rendered from the `main` branch.
 ## Add Helm repo
 
 ```bash
-helm repo add ad2image https://itatm.github.io/ad2image-helm-chart
+helm repo add ad2image https://it-at-m.github.io/ad2image-helm-chart
 ```
 
 ## Installing the Chart
