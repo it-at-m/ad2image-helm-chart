@@ -127,6 +127,10 @@ credentials:
   ewsPassword: ""
   existingSecret: ""
 
+cache:
+  # configmap with key 'ehcache.xml' containing a custom EhCache configuration
+  existingConfigMap: ""
+
 # URL, will be used as redirect url for /
 docsUrl: ""
 
