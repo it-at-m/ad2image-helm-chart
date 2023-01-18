@@ -3,6 +3,20 @@ entries:
   ad2image:
   - apiVersion: v2
     appVersion: 1.0.4
+    created: "2023-01-18T08:22:36.161810294Z"
+    description: A Helm chart for ad2image
+    digest: b706964dc28254fb0f1d9e08190d72ab2154cc9e96f964bf94c06541900c1feb
+    icon: https://github.com/it-at-m/ad2image-helm-chart/raw/main/images/logo.png
+    maintainers:
+    - email: eidottermihi@gmail.com
+      name: Michael Prankl
+    name: ad2image
+    type: application
+    urls:
+    - https://github.com/it-at-m/ad2image-helm-chart/releases/download/ad2image-1.0.2/ad2image-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.4
     created: "2023-01-17T16:13:02.547521399Z"
     description: A Helm chart for ad2image
     digest: 93f0389c33cd865e237b0c84036ae9414f44aee4ae25b62ccf912e83b45a2158
@@ -57,4 +71,4 @@ entries:
     urls:
     - https://github.com/it-at-m/ad2image-helm-chart/releases/download/ad2image-0.1.0/ad2image-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-17T16:13:02.547534799Z"
+generated: "2023-01-18T08:22:36.161835695Z"
