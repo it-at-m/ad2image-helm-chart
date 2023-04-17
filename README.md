@@ -1,3 +1,10 @@
+# NOTICE
+
+The Helm chart for ad2image has been moved to the it@M Helm charts repository at <https://github.com/it-at-m/helm-charts>.
+
+If you've been using an old release of this chart, please update your helm chart repository to point to <https://it-at-m.github.io/helm-charts/>.
+
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
